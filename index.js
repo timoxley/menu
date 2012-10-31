@@ -151,7 +151,7 @@ Menu.prototype.add = function(text, fn){
     , el = o('<li><a href="#">' + text + '</a></li>')
     .addClass('menu-item-' + slug)
     .appendTo(this.el)
-    .mousedown(function(e){
+    .mouseup(function(e){
       e.preventDefault();
       e.stopPropagation();
       self.hide();
