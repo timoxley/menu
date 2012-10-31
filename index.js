@@ -32,7 +32,7 @@ function Menu() {
   this.items = {};
   this.el = o('<ul class=menu>').hide().appendTo('body');
   this.el.hover(this.deselect.bind(this));
-  o('html').click(this.hide.bind(this));
+  o('html').mousedown(this.hide.bind(this));
   this.on('show', this.bindKeyboardEvents.bind(this));
   this.on('hide', this.unbindKeyboardEvents.bind(this));
 }
@@ -151,7 +151,7 @@ Menu.prototype.add = function(text, fn){
     , el = o('<li><a href="#">' + text + '</a></li>')
     .addClass('menu-item-' + slug)
     .appendTo(this.el)
-    .click(function(e){
+    .mousedown(function(e){
       e.preventDefault();
       e.stopPropagation();
       self.hide();
